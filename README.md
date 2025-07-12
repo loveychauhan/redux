@@ -62,7 +62,7 @@ export default function cartReducer(state = [], action) {
 }
 ```
 🙋‍♂️ Author
-Lovey Chauhan 🔗 GitHub Profile
+Lovey Chauhan 🔗 [Github profile](https://github.com/loveychauhan)
 
 ⭐️ Show Your Support
 If you found this project helpful, give it a ⭐️ and share it with others. Let’s build clean, scalable apps together!
