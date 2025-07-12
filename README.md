@@ -1,4 +1,4 @@
-# 🦆 Redux Fundamentals with Duck Pattern
+#  Redux Fundamentals 
 
 This repository is a hands-on exploration of **Redux fundamentals**, built using **vanilla JavaScript** and **Parcel**. It demonstrates how to manage global state predictably and maintainably — with a focus on the **Duck Pattern** for modular architecture.
 
@@ -60,7 +60,7 @@ export default function cartReducer(state = [], action) {
       return state;
   }
 }
-
+```
 🙋‍♂️ Author
 Lovey Chauhan 🔗 GitHub Profile
 
