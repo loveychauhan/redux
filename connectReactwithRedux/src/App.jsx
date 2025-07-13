@@ -11,6 +11,7 @@ function App() {
           return (
             <Product
               key={id}
+              productId={id}
               title={title}
               rating={rating.rate}
               price={price}

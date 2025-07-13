@@ -70,21 +70,21 @@ const reducer = combineReducers({
 
 // }
 
-export const store = createStore(reducer, __REDUX_DEVTOOLS_EXTENSION__())
+export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
-store.dispatch(addCartItem(5))
-store.dispatch(addCartItem(7))
+// store.dispatch(addCartItem(5))
+// store.dispatch(addCartItem(7))
 
-store.dispatch(removeCartItem(7))
+// store.dispatch(removeCartItem(7))
 
-store.dispatch(increaseCartItemQuantity(5))
-store.dispatch(decreaseCartItemQuantity(5))
-store.dispatch(decreaseCartItemQuantity(5))
+// store.dispatch(increaseCartItemQuantity(5))
+// store.dispatch(decreaseCartItemQuantity(5))
+// store.dispatch(decreaseCartItemQuantity(5))
 
-store.dispatch(removeWishlistItem(5))
-store.dispatch(addWishlistItem(5))
-store.dispatch(removeWishlistItem(5))
+// store.dispatch(removeWishlistItem(5))
+// store.dispatch(addWishlistItem(5))
+// store.dispatch(removeWishlistItem(5))
 
 
 
