@@ -1,12 +1,68 @@
-# React + Vite
+markdown
+# 🧠 Redux Product Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository showcases a basic Redux implementation for product search functionality using vanilla JavaScript. It demonstrates how to organize state with reducers and actions, and filter products based on user input.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔎 Filter products by title
+- 🧠 Redux for state management
+- 🔧 Modular action-reducer-store architecture
+- ⚙️ Extensible structure for frontend integration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📁 Project Structure
+
+redux/ ├── product.js # Static product data ├── actions.js # Action creator: searchProduct ├── reducer.js # Reducer for filtering logic ├── store.js # Redux store configuration └── README.md # Documentation
+
+
+---
+
+## 🔧 How It Works
+
+1. **Initial State**:
+   - `allProducts`: Complete product list
+   - `filteredProducts`: Products matching search input
+
+2. **searchProduct(title)** action dispatches a search query.
+
+3. **Reducer** filters products using `.includes()` and updates `filteredProducts`.
+
+---
+
+### 🛠️ Redux Code Snippet
+
+```js
+// actions.js
+export function searchProduct(title = "") {
+  return { type: "search/product", payload: { title } };
+}
+
+// reducer.js
+const initialState = {
+  allProducts: productList,
+  filteredProducts: productList,
+};
+
+export default function productReducer(state = initialState, action) {
+  switch (action.type) {
+    case "search/product":
+      const keyword = action.payload.title.toLowerCase();
+      const filtered = state.allProducts.filter(product =>
+        product.title.toLowerCase().includes(keyword)
+      );
+      return { ...state, filteredProducts: filtered };
+
+    default:
+      return state;
+  }
+}
+
+👤 Author
+Lovey Chauhan 🔗 GitHub Profile
+
+📜 License
+MIT © Lovey Chauhan
