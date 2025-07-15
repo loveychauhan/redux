@@ -1,11 +1,15 @@
 import "./App.css";
 import Product from "./components/product";
 import { useSelector } from "react-redux";
+import Search from "./components/Search";
 
 function App() {
   const productList = useSelector((state) => state.product);
   return (
     <>
+      <div>
+        <Search />
+      </div>
       <div className="products-container">
         {productList.map(({ id, title, rating, price, image }) => {
           return (

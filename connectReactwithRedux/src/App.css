@@ -33,6 +33,18 @@ button {
   padding: 16px;
 }
 
+.searchBar {
+  max-width: 1200px;
+
+  margin: 12px auto;
+}
+.search-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 8px;
+  outline: 0;
+}
 .cart-Content {
   display: flex;
   align-items: center;
@@ -41,6 +53,7 @@ button {
 }
 .cartAndWishlist {
   display: flex;
+
   align-items: center;
   gap: 20px;
 }
