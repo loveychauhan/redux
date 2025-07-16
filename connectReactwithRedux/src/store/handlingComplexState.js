@@ -1,8 +1,9 @@
 
 import { combineReducers, createStore } from "redux";
-import productReducer from "./productReducer";
-import wishListReducer, { addWishlistItem, removeWishlistItem, } from "./wishlistReducer";
-import cartReducer, { addCartItem, decreaseCartItemQuantity, increaseCartItemQuantity, removeCartItem } from "./cartReducer";
+import wishListReducer from "./slice/wishlistReducer";
+import productReducer from "./slice/productReducer";
+import cartReducer from "./slice/cartReducer";
+import { produce } from "immer";
 
 
 //Combinig Reducers
@@ -72,6 +73,33 @@ const reducer = combineReducers({
 
 export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
+const user = [
+    {
+        name: 'Lovey',
+        age: 22
+    },
+    {
+        name: 'gon',
+        age: 15
+    },
+    {
+        name: 'kilua',
+        age: 14
+    }
+]
+
+//Mutating code which changes main object
+// user[1].age = 14
+
+
+// usung mutating code but inside produce function which create a proxy of the object and then you can use same mutating code logic but without worrying about the orignal state 
+
+// const newUser = produce(user, (newUser) => {
+//     newUser[1].age = 16
+
+// })
+// console.log(newUser)
+// console.log(user)
 
 // store.dispatch(addCartItem(5))
 // store.dispatch(addCartItem(7))

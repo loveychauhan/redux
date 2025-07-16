@@ -13,7 +13,7 @@ export default function WishlistItem({ productId, title, price, imageUrl }) {
       </div>
       <div></div>
       <div className="item-quantity">
-        <button onClick={() => dispatch(removeWishlistItem(productId))}>
+        <button onClick={() => dispatch(removeWishlistItem({ productId }))}>
           Remove Item
         </button>
       </div>

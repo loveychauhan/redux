@@ -1,4 +1,4 @@
-import { productList } from "./product";
+import { productList } from "../product";
 
 const SEARCH_PRODUCT = 'search/product'
 
