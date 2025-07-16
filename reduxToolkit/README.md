@@ -13,7 +13,7 @@ This folder demonstrates how to use **Redux Toolkit** to manage application stat
 
 ## Comparison
 -Redux toolkit is a js library that uses redux under the hood 
-- It gives inbuilt function such as createSlice() which create action type , action cretors and reducer in a sigle function
+- It gives inbuilt function such as createSlice() which create action type , action creators and reducer in a sigle function
 - Configue store automatically comnbines multiple reducer and creates slice
 - It reduces code when compare to redux 
 
