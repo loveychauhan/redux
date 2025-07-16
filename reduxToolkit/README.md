@@ -11,7 +11,7 @@ This folder demonstrates how to use **Redux Toolkit** to manage application stat
 - ✅ Clean reducer logic and action generation
 - ⚙️ Scalable and easy-to-integrate state architecture
 
-##Comparison
+## Comparison
 -Redux toolkit is a js library that uses redux under the hood 
 - It gives inbuilt function such as createSlice() which create action name , action type and reducer in a sigle function
 - Configue store automatically comnbines multiple reducer and creates slice
