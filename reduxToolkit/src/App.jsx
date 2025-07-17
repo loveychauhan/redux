@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Search from "./components/Search";
 
 function App() {
-  const productList = useSelector((state) => state.product);
+  const productList = useSelector((state) => state.product.visibleProducts);
   return (
     <>
       <Search />
