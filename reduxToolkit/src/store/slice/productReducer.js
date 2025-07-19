@@ -1,14 +1,29 @@
-import { productList } from "../product";
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
     name: 'search',
     initialState: {
-        allProducts: productList,         // master copy
-        visibleProducts: productList     // displayed list
+        allProducts: [],
+        visibleProducts: [],
+        isloading: false,
+        isError: false   // displayed list
     },
     reducers: {
-        searchProduct(state = initialState, action) {
+        addProducts(state, action) {
+            state.isloading = true
+            state.allProducts = [...action.payload]
+            state.visibleProducts = [...action.payload]
+            state.isloading = false
+
+        },
+        loadingReducer(state) {
+            state.isloading = true
+        },
+        errorReducer(state) {
+            state.isloading = false
+            state.isError = true
+        },
+        searchProduct(state, action) {
             const searchBy = action.payload?.toLowerCase();
             state.visibleProducts = searchBy ? state.allProducts.filter(item => {
                 return item.title.toLowerCase().includes(searchBy)
@@ -19,7 +34,7 @@ const slice = createSlice({
 })
 
 
-export const { searchProduct } = slice.actions
+export const { searchProduct, addProducts, loadingReducer, errorReducer } = slice.actions
 export default slice.reducer
 
 
