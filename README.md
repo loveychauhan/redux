@@ -1,5 +1,4 @@
-# 🧠 Redux Product Filter – Learning Project
-
+# 🧠 Redux 
 This repository demonstrates the implementation of a product filtering system using Redux in vanilla JavaScript. It's designed as a foundational learning project to practice core Redux concepts such as state management, actions, and reducer logic — all organized for clarity and scalability.
 
 ---
