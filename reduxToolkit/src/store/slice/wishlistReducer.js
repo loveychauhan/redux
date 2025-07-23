@@ -20,6 +20,8 @@ const slice = createSlice({
 
 })
 
+export const getWishList = (state) => state.wishlist;
+
 export const { addWishlistItem, removeWishlistItem } = slice.actions
 export default slice.reducer
 

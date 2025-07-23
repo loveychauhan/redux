@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -10,7 +10,6 @@ import WishList from "./pages/WishList.jsx";
 import Layout from "./components/Layout.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
@@ -22,5 +21,4 @@ createRoot(document.getElementById("root")).render(
         </Routes>
       </BrowserRouter>
     </Provider>
-  </StrictMode>
 );

@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   decreaseCartItemQuantity,
   increaseCartItemQuantity,
@@ -14,7 +14,9 @@ export default function CartItem({
   quantity,
 }) {
   const dispatch = useDispatch();
+
   return (
+
     <div className="cart-item-container">
       <div className="cart-item">
         <img src={image} alt={title} />

@@ -1,6 +1,6 @@
 import "./App.css";
 import Product from "./components/product";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Search from "./components/Search";
 
 function App() {

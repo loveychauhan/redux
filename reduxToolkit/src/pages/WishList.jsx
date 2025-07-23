@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import WishlistItem from "../components/WishlistItem";
+import { getWishList } from "../store/slice/wishlistReducer";
 
 export default function Cart() {
-  const wishListItems = useSelector((state) => state.wishlist);
+  const wishListItems = useSelector(getWishList);
   const totalPrice = wishListItems.reduce((acc, curr) => acc + curr.price, 0);
   return (
     <div className="cart-container">

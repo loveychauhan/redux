@@ -7,35 +7,51 @@ import {
   errorReducer,
   loadingReducer,
 } from "../store/slice/productReducer";
-import { loadCartItems } from "../store/slice/cartReducer";
+import {
+  fetchCartItemFromApi,
+} from "../store/slice/cartReducer";
 import { useEffect } from "react";
 
 export default function Header() {
   const wishListItems = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
-
   const headerWishlistCount = wishListItems.length;
 
   useEffect(() => {
-    dispatch(loadingReducer());
-    setTimeout(() => {
-      fetch("https://fakestoreapi.com/products")
-        .then((res) => res.json())
-        .then((data) => {
-          dispatch(addProducts(data));
-        })
-        .catch(() => {
-          dispatch(errorReducer());
-        });
-    }, 0);
+    dispatch({
+      type: "api/makeCall",
+      payload: {
+        url: "products",
+        onStart: loadingReducer.type,
+        onSuccess: addProducts.type,
+        onError: errorReducer.type,
+      },
+    });
+    // dispatch({
+    //   type: "api/makeCall",
+    //   payload: {
+    //     url: "carts/5",
+    //     onStart: fetchCartItems.type,
+    //     onSuccess: loadCartItems.type,
+    //     onError: fetchCartItemsError.type,
+    //   },
+    // });
+    // dispatch(loadingReducer());
 
-    fetch("https://fakestoreapi.com/carts/5")
-      .then((res) => res.json())
-      .then((data) => dispatch(loadCartItems(data)));
+    //   fetch("https://fakestoreapi.com/products")
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       dispatch(addProducts(data));
+    //     })
+    //     .catch(() => {
+    //       dispatch(errorReducer());
+    //     });
+
+    dispatch(() => fetchCartItemFromApi(dispatch));
   }, []);
 
-  const cartItems = useSelector((state) => state.cartItems);
-  const headerCartCount = cartItems.reduce((prev, curr) => {
+  const cartItems = useSelector((state) => state.cartItems.list);
+  const headerCartCount = cartItems?.reduce((prev, curr) => {
     return prev + curr.quantity;
   }, 0);
 

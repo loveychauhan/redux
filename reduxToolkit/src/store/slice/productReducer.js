@@ -33,7 +33,6 @@ const slice = createSlice({
     }
 })
 
-
 export const { searchProduct, addProducts, loadingReducer, errorReducer } = slice.actions
 export default slice.reducer
 
